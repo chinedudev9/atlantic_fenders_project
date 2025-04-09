@@ -11,7 +11,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="p-2 px-6 md:px-20 shadow-md rounded-b-2xl">
+    <header className="sticky top-0 z-50 p-2 px-6 md:px-20 shadow-md rounded-b-2xl"
+      style={{ backgroundColor: "var(--background)" }}>
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <motion.div
