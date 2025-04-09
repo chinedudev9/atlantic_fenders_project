@@ -11,7 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="p-2 px-6 md:px-20 shadow-lg border-b border-purple-500  rounded-b-2xl">
+    <header className="p-2 px-6 md:px-20 shadow-md rounded-b-2xl">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <motion.div
@@ -55,12 +55,17 @@ export default function Header() {
 
       {/* Mobile Menu - Shown when menu is open */}
       {isMenuOpen && (
-        <div className="absolute font-serif font-bold top-16 right-0 w-70 mt-1 border-l rounded-b-3xl z-50 shadow-lg md:hidden">
+        <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 2 }}
+        transition={{ duration: 3 }}
+        className="absolute font-serif font-bold top-16 right-0 w-55 mt-0.5 border-l rounded-b-3xl z-50 shadow-lg md:hidden"
+        style={{ backgroundColor: "var(--background)" }}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 2 }}
             transition={{ duration: 3 }}
-            className="flex flex-col items-center text-black dark:text-purple-800 font-medium gap-4 p-4">
+            className="flex flex-col items-center font-medium gap-4 p-4">
             <SearchToggle />
             <Link className='hover:animate-bounce' href="/">Home</Link>
             <Link className='hover:animate-bounce' href="/about">About</Link>
@@ -68,7 +73,7 @@ export default function Header() {
             <Link className='hover:animate-bounce' href="/our clients">Our Clients</Link>
             <ThemeToggle />
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </header>
   );

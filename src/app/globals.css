@@ -7,19 +7,19 @@
   /* New custom colors */
   --primary: #6a0dad;       /* Purple-ish for light mode */
   --secondary: #f5f5f5;
-  --accent: #ff4081;
+  --accent: #880840;
   --border: #e0e0e0;
   --card-bg: #fafafa;
 }
 
 .dark {
-  --background: #0c000e;
+  --background: #0a0005;
   --text-color: #ffffff;
 
   /* Dark mode equivalents */
   --primary: #bb86fc;
   --secondary: #1a1a1a;
-  --accent: #ff79c6;
+  --accent: #880840;
   --border: #333333;
   --card-bg: #1e1e1e;
 }

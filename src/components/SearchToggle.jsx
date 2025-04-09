@@ -23,7 +23,7 @@ export default function SearchToggle() {
       {open ? (
         <form
           onSubmit={handleSubmit}
-          className="flex items-center border border-purple-500 rounded-2xl px-2 bg-white w-70 justify-center p-1.5"
+          className="flex items-center border border-purple-500 rounded-2xl px-2 bg-white w-50 md:w-70 justify-center p-1.5"
         >
           <Search size={18} className="mr-2 text-purple-500" />
           <input
@@ -43,7 +43,7 @@ export default function SearchToggle() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y:2 }}
         transition={{ duration: 3 }}
-       className=" rounded-md border-purple-500 border-b p-1.5 px-3 text-purple-800"
+       className=" rounded-md border-purple-500 border-b p-1.5 px-3 text-purple-800 cursor-pointer"
      onClick={() => setOpen(true)}
         >
           <Search size={18} />

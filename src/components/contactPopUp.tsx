@@ -66,10 +66,12 @@ const ContactPopup = () => {
         initial={{opacity: 1, y: -50}}
          animate={{opacity: 1, y: 1}}
          transition={{duration: 3}}
-        className="fixed font-serif inset-0 backdrop-blur-sm z-50 shadow-lg flex items-center justify-center">
-          <div ref={modalRef} className="rounded-2xl border border-amber-50 shadow-lg w-full max-w-md p-6 relative">
-            <button onClick={closeModal} className="absolute cursor-pointer tops-1 right-1 pr-4 hover:text-gray-800 text-4xl">×</button>
-            <h2 className="text-xl text-center rounded-md text-purple-950 font-semibold mb-4">Send us a message</h2>
+        className="fixed font-serif inset-0 backdrop-blur-sm z-50 shadow-2xl flex items-center justify-center"
+        >
+          <div ref={modalRef} className="rounded-2xl border shadow-lg w-95 max-w-md p-6 mx-3 relative"
+          style={{ backgroundColor: "var(--background)" }}>
+            <button onClick={closeModal} className="absolute cursor-pointer items-center justify-center tops-2 right-2 pr-2 hover:text-gray-800 text-4xl">×</button>
+            <h2 className="text-xl rounded-md text-purple-800 font-semibold mb-6 items-center justify-center">Send us a message</h2>
             <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
               <input type="text" name="name" placeholder="Name" required className="w-full border border-purple-400 outline-0 px-3 py-2 rounded" />
               <input type="email" name="email" placeholder="Email" required className="w-full border border-purple-400 px-3 py-2 outline-0 rounded" />

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const slides = [
   {
     image: '/AFSS_catherine1.jpg',
-    title: 'Welcome to Atlantic Fenders & Support Services',
+    title: 'Atlantic Fenders & Support Services',
     subtitle: 'Efficient and reliable STS service provider.',
     description: 'We provide end-to-end support across West Africa offshores, ensuring safe and timely operations.',
   },
@@ -35,7 +35,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full h-[65vh] overflow-hidden">
+    <div className="relative w-full h-[80vh] overflow-hidden">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <motion.div
@@ -62,11 +62,11 @@ export default function HeroSlider() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, x: 50 }}
             transition={{ duration: 1 }}
-            className="text-white max-w-3xl"
+            className="text-white"
           >
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">{slides[currentIndex].title}</h1>
-            <p className="text-lg md:text-xl mb-2">{slides[currentIndex].subtitle}</p>
-            <p className="text-base md:text-lg">{slides[currentIndex].description}</p>
+            <h1 className="text-2xl md:text-6xl md:flex flex-col font-extrabold mb-4">{slides[currentIndex].title}</h1>
+            <p className="text-lg md:text-xl mb-2 font-bold">{slides[currentIndex].subtitle}</p>
+            <p className="text-sm md:text-lg">{slides[currentIndex].description}</p>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -77,7 +77,7 @@ export default function HeroSlider() {
           <span
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+            className={`w-1.5 h-1.5 rounded-full cursor-pointer transition-all duration-300 ${
               index === currentIndex ? 'bg-white' : 'bg-purple-600'
             }`}
           ></span>

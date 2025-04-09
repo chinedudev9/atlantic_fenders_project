@@ -9,7 +9,7 @@ const SocialSidebar = () => {
     initial={{opacity: 0, y: -20}}
     animate={{opacity: 1, y: 2}}
     transition={{duration: 2}} 
-     className="fixed right-0 top-1/3 z-50 flex flex-col mr-1 space-y-5 p-2 rounded-l-lg shadow-lg">
+     className="fixed right-0 top-1/3 z-30 flex flex-col mr-1 space-y-5 p-2 rounded-l-lg shadow-lg">
       <a
         href="https://facebook.com/yourPage"
         target="_blank"
