@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { motion } from "motion/react";
@@ -23,7 +23,7 @@ export default function SearchToggle() {
       {open ? (
         <form
           onSubmit={handleSubmit}
-          className="flex items-center border border-purple-500 rounded-2xl px-2 bg-white w-50 md:w-70 justify-center p-1.5"
+          className="flex items-center border border-purple-500 rounded-2xl px-2 bg-white w-50 lg:w-70 justify-center p-1.5"
         >
           <Search size={18} className="mr-2 text-purple-500" />
           <input

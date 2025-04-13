@@ -9,17 +9,26 @@ import HeroSecond from "@/components/HeroSecond";
 import HeroThird from "@/components/HeroThird";
 import HeroFourth from "@/components/HeroFourth";
 import HeroFifth from "@/components/HeroFifth";
+import StartCounter from "@/components/StartCounter";
+import TeamComponent from "@/components/TeamComponent";
+import BlogSlider from "@/components/BlogSlider";
+import Partner from "@/components/Partner";
+import BlogPost from "@/components/BlogPost";
 
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <HeroSlider />
-      <HeroSecond />
+      <HeroSlider/>
+      <StartCounter />
       <HeroThird />
+      <HeroSecond />
       <HeroFourth />
       <HeroFifth />
+      <TeamComponent />
+      <Partner />
+      <BlogPost />
       <Footer />
       
        

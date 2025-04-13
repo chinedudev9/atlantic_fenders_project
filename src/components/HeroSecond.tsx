@@ -8,7 +8,9 @@ import PopUp from "@/components/PopUp";
 function HeroSecond() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className='overflow-scroll h-auto pt-10 pb-10 py:10 md:py-15 px-4 md:px-8 flex flex-col md:flex-row md:space-x-25 space-y-15 md:space-y-0 items-center justify-between'>
+    <div
+    style={{ backgroundImage: "url('/fender1.jpg')", minHeight: '250px' }} 
+    className=' h-auto pt-10 pb-10 py:10 md:py-15 px-4 md:px-8 flex flex-col md:flex-row md:space-x-25 space-y-15 md:space-y-0 items-center justify-between flex-wrap'>
   {/* First Block */}
   <div className="flex-1 flex flex-col items-center justify-center text-center">
     <IoCallOutline size={30} />
