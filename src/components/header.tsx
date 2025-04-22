@@ -3,24 +3,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
 import SearchToggle from "@/components/SearchToggle";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+
+
 
   return (
-    <header className="sticky top-0 z-50 py-2 pl-6 pr-4 shadow-2xl rounded-b-2xl"
+    <header className="sticky top-0 z-50 py-2 pl-6 pr-4 shadow-2xl rounded-b-3xl md:rounded-b-none"
       style={{ backgroundColor: "var(--background)" }}>
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
+      <div className="flex justify-between md:h-15 items-center max-w-6xl mx-auto">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 1, x: -50 }}
-          animate={{ opacity: 1, x: 1 }}
+          initial={{ opacity: 1, x: 50 }}
+          animate={{ opacity: 1, x: 5 }}
           transition={{ duration: 3 }}
-           className='flex-shrink-0.5 hover:animate-bounce'>
-          <Image src="/AFSS_logo.png" alt="AFSS_logo" width={150} height={100} />
+           className='flex-shrink-0.5 w-auto hover:animate-bounce'>
+          <Image src="/AFSS_logo.png" alt="AFSS_logo" width={120} height={40} className='w-[25vh]'/>
         </motion.div>
 
         <div className="flex gap-4 items-center">
@@ -43,15 +48,36 @@ export default function Header() {
           transition={{ duration: 3 }}
           className="hidden lg:flex items-center">
             <SearchToggle />
-            <div className="hidden md:flex gap-5 items-center 
-            font-xl ml-5 mr-10 py-0.5 px-2.5 rounded-2xl">
-              <Link className='' href="/">HOME</Link>
-              <Link className='' href="/company">COMPANY</Link>
-              <Link className='' href="/service">SERVICES</Link>
-              <Link className='' href="/fleets">FLEETS</Link>
-              <Link className='' href="/latest_news">NEWS</Link>
-              <Link className='' href="/gallery">GALLERY</Link>
-              <Link className='' href="/Job_board">JOB BOARD</Link>
+            <div className="hidden font-medium md:flex gap-5 items-center justify-center
+            font-xl ml-5 mr-10 py-0.5 px-2.5">
+              <Link href="/" className={`relative pb-1.5  ${
+                pathname === '/' ? 'hover:text-blue-800' : ''}`}>
+                HOME {pathname === '/' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/company" className={`relative pb-1.5  ${
+                pathname === '/company' ? 'hover:text-blue-800' : ''}`}>
+                COMPANY {pathname === '/company' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/services" className={`relative pb-1.5  ${
+                pathname === '/services' ? 'hover:text-blue-800' : ''}`}>
+                SERVICES {pathname === '/services' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/fleets" className={`relative pb-1.5  ${
+                pathname === '/fleets' ? 'hover:text-blue-800' : ''}`}>
+                FLEETS {pathname === '/fleets' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/news" className={`relative pb-1.5  ${
+                pathname === '/news' ? 'hover:text-blue-800' : ''}`}>
+                NEWS {pathname === '/news' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/gallery" className={`relative pb-1.5  ${
+                pathname === '/galley' ? 'hover:text-blue-800' : ''}`}>
+                GALLERY {pathname === '/gallery' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
+              <Link href="/career" className={`relative pb-1.5  ${
+                pathname === '/career' ? 'hover:text-blue-800' : ''}`}>
+                CAREER {pathname === '/career' && (<span className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"></span>)}
+              </Link>
             </div> 
           <ThemeToggle />
         </motion.div>
@@ -62,22 +88,22 @@ export default function Header() {
         <motion.div 
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 2 }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 2 }}
         className="absolute top-16 right-0 w-55 mt-0.5 border-l rounded-b-3xl z-50 shadow-lg lg:hidden"
         style={{ backgroundColor: "var(--background)" }}>
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 1, x: 50 }}
             animate={{ opacity: 1, x: 2 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 2 }}
             className="flex flex-col items-center gap-4 p-4">
             <SearchToggle />
-              <Link className='' href="/">HOME</Link>
-              <Link className='' href="/company">COMPANY</Link>
-              <Link className='' href="/service">SERVICES</Link>
-              <Link className='' href="/fleets">FLEETS</Link>
-              <Link className='' href="/latest_news">NEWS</Link>
-              <Link className='' href="/gallery">GALLERY</Link>
-              <Link className='' href="/Job_board">JOB BOARD</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/">HOME</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/company">COMPANY</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/services">SERVICES</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/fleets">FLEETS</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/news">NEWS</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/gallery">GALLERY</Link>
+              <Link className='font-semibold hover:text-blue-800' href="/career">CAREER</Link>
             <ThemeToggle />
           </motion.div>
         </motion.div>

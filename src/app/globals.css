@@ -5,25 +5,17 @@
 :root {
   --background: #ffffff;
   --text-color: #000000;
-
-  /* New custom colors */
-  --primary: #6a0dad;       /* Purple-ish for light mode */
+  --primary: #6a0dad;
   --secondary: hsl(138, 57%, 25%);
-  --accent: #880840;
-  --border: #e0e0e0;
-  --card-bg: #fafafa;
+  --accent: #661a3b;
 }
 
 .dark {
   --background: #440841;
   --text-color: #ffffff;
-
-  /* Dark mode equivalents */
-  --primary: #bb86fc;
-  --secondary: #80a572;
-  --accent: #880840;
-  --border: #333333;
-  --card-bg: #1e1e1e;
+  --primary: #855da1;
+  --secondary: hsl(138, 57%, 25%);
+  --accent: #661a3b;
 }
 
 html,

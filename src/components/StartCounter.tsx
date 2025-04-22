@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
@@ -33,26 +34,33 @@ export default function StatsCounter() {
   });
 
   return (
-    <div ref={ref} className="bg-gray-100 py-16 px-6 md:px-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+    <motion.div
+      ref={ref}
+      className="bg-gray-300 py-16 relative z-20 px-6 rounded-4xl md:px-8"
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 2, x: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
         {stats.map((stat, index) => (
           <div key={index} className="space-y-3">
-            <h3 className="text-4xl font-extrabold text-blue-700">
+            <h3 className="md:text-4xl font-bold text-3xl text-blue-800">
               {inView && (
                 <CountUp
                   start={0}  // Start from 0 each time the element is in view
                   end={stat.value}
-                  duration={5}  // Duration of the animation
+                  duration={7}  // Duration of the animation
                   separator=","
                 //  prefix={stat.prefix || ""}
                   suffix={stat.suffix || ""}
                 />
               )}
             </h3>
-            <p className="text-gray-700 text-sm">{stat.label}</p>
+            <p className="text-gray-800 font-serif font-semibold">{stat.label}</p>
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

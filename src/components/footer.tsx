@@ -6,8 +6,8 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 pt-12 h-[60vh] text-white px-6 md:px-12 py-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+    <footer className="bg-gray-900 pt-15 h-auto text-white px-6 md:px-12 py-6">
+      <div className="max-w-7xl mx-auto grid pt-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div className="md:col-span-2 md:mr-5">
           <div className="mb-4">
@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom footer */}
-      <div className="border-t border-gray-800 mt-20 bottom-0 pt-6 text-center text-gray-500 text-sm">
+      <div className="border-t bg-gray-900 border-gray-800 mt-20 bottom-0 pt-6 text-center text-gray-500 text-sm">
         &copy; {new Date().getFullYear()} Atlantic Fenders & Support Services. All rights reserved.
       </div>
     </footer>

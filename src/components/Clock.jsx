@@ -29,7 +29,9 @@ const ClockFace = ({ time }) => {
   const numbers = Array.from({ length: 12 }, (_, i) => i + 1);
 
   return (
-    <div className="relative w-30 h-30 rounded-full border-4 border-white bg-gray-800">
+    <div 
+    style={{ backgroundColor: "var(--background)" }}
+    className="relative w-25 h-25 rounded-full border-2 bg-gray-800">
       {numbers.map((num) => {
         const angle = ((num - 3) * 30 * Math.PI) / 180;
         const x = 50 + 42 * Math.cos(angle);
@@ -38,7 +40,7 @@ const ClockFace = ({ time }) => {
         return (
           <span
             key={num}
-            className="absolute text-white text-sm font-bold"
+            className="absolute  text-sm font-semibold"
             style={{
               left: `${x}%`,
               top: `${y}%`,
@@ -52,18 +54,18 @@ const ClockFace = ({ time }) => {
 
       {/* Clock Hands */}
       <div
-        className="absolute w-0.5 h-5.5 bg-white origin-bottom left-1/2 top-[30%]"
-        style={{ transform: `translateX(-50%) rotate(${hourDeg}deg)` }}
+        className="absolute w-0.5 h-5.5 origin-bottom left-1/2 top-[30%]"
+        style={{ transform: `translateX(-50%) rotate(${hourDeg}deg)`, backgroundColor: "var(--background)" }}
       />
       <div
-        className="absolute w-0.5 h-8 bg-green-400 origin-bottom left-1/2 top-[20%]"
+        className="absolute w-0.5 h-8 bg-blue-400 origin-bottom left-1/2 top-[20%]"
         style={{ transform: `translateX(-50%) rotate(${minDeg}deg)` }}
       />
       <div
         className="absolute w-0.5 h-10 bg-red-500 origin-bottom left-1/2 top-[10%]"
         style={{ transform: `translateX(-50%) rotate(${secDeg}deg)` }}
       />
-      <div className="absolute w-3 h-3 bg-white rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10" />
+      <div className="absolute w-3 h-3 bg-black rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10" />
     </div>
   );
 };
@@ -87,11 +89,11 @@ const AnalogClock = ({ name, tz, flag }) => {
         if (data?.weather?.[0]?.description) {
           setWeather(data.weather[0].description);
         } else {
-          setWeather('Unavailable');
+          setWeather('You are offline!');
         }
       } catch (err) {
         console.error('Weather fetch error:', err);
-        setWeather('Unavailable');
+        setWeather('You are offline!');
       }
     };
 
@@ -128,11 +130,16 @@ const AnalogClock = ({ name, tz, flag }) => {
 
 const AnalogClockGrid = () => {
   return (
-    <div>
-      <h1 className="lg:text-3xl font-bold text-center text-black mt-2 mb-3">🌧️ Report</h1>
-<div className="overflow-x-auto md:overflow-x-visible whitespace-nowrap flex lg:flex-nowrap gap-6 p-6">
+    
+    <div className='h-auto relative ' style={{ backgroundColor: "var(--background)" }}>
+        <div className="flex items-center mt-10 md:mt-0 justify-center mb-10">
+               <hr className="w-10 md:w-30 border-red-500" />
+               <h2 className="mx-2 md:4 text-blue-800 text-2xl font-bold">🌧️ Report</h2>
+               <hr className="w-10 md:w-30 border-gray-600" />
+        </div>
+<div className="overflow-x-auto md:overflow-x-visible bg-gray-300 rounded-3xl whitespace-nowrap flex lg:flex-nowrap gap-6 p-4">
   {cities.map((city) => (
-    <div key={city.name} className="inline-block md:flex-shrink-0">
+    <div key={city.name} className="inline-block text-green-900 md:flex-shrink-0">
       <AnalogClock {...city} />
     </div>
   ))}
