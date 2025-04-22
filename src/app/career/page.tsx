@@ -2,8 +2,8 @@ import React from 'react'
 
 function page() {
   return (
-    <div>
-        Job board
+    <div className='justify-center items-center'>
+        coming soon
     </div>
   )
 }
