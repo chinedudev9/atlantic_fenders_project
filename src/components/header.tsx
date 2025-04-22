@@ -25,7 +25,7 @@ export default function Header() {
           animate={{ opacity: 1, x: 5 }}
           transition={{ duration: 3 }}
            className='flex-shrink-0.5 w-auto hover:animate-bounce'>
-          <Image src="/AFSS_logo.png" alt="AFSS_logo" width={120} height={40} className='w-[25vh]'/>
+          <Image src="/images/AFSS_logo.png" alt="AFSS_logo" width={120} height={40} className='w-[25vh]'/>
         </motion.div>
 
         <div className="flex gap-4 items-center">
